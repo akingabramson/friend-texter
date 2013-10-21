@@ -24,6 +24,10 @@ group :development do
   gem 'letter_opener'
 end
 
+group :production do
+  gem 'pg'
+end
+
 gem 'jquery-rails'
 gem 'twilio-ruby'
 
