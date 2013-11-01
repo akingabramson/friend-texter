@@ -1,8 +1,6 @@
 FriendTexter::Application.routes.draw do
-  resources :texts, only: [:index, :create]
-  # resource :mail, only: [:create]
-  post 'mail' => 'mail#create'
-  get 'mail' => 'mail#index'
+  resources :texts, only: [:create]
+  resources :mail, only: [:create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,14 +1,13 @@
 class TextsController < ApplicationController
-  def index
-
-    # send_emaililFriend.send_email.deliver
-    render json: {message: "sent"}
-  end
 
   def create
-    
     EmailFriend.send_email(params["Body"], params["From"], 
-                           "a.kingabramson@gmail.com").deliver
+                           ENV["Friend_Email"]).deliver
+    
+    # In the future, add a backend so users can send
+    # to multiple friends.  Currently in trial mode, so
+    # I'm testing sending to only one friend.
+    
     render json: {message: "sent"}
   end
 end
